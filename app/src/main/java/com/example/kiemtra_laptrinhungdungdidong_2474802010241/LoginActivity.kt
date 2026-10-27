@@ -29,8 +29,11 @@ class LoginActivity : AppCompatActivity() {
             } else if (password.length < 6) {
                 tvStatus.text = "Lỗi: Mật khẩu phải có ít nhất 6 ký tự!"
             } else {
-                tvStatus.text = "Validation Successful!"
+            tvStatus.text = "Validation Successful!"
+            val intent = android.content.Intent(this@LoginActivity, ProfileActivity::class.java)
+            intent.putExtra("USER_EMAIL", email)
+            startActivity(intent)
+        }
             }
         }
     }
-}
